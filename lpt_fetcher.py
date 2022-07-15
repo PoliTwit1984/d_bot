@@ -82,7 +82,7 @@ class RedditFetcher:
         # print(len('tweet'))
         mylist = tweet.split(',')
 
-        tweet = f"Interesting Data Visual: {mylist[2]} #dataisbeautiful #dataisamazing"
+        tweet = f"Interesting Data Visual: {mylist[2]} #dataisbeautiful #dataisamazing #data #datavisualization"
         filename = mylist[1].strip()
 
         media = api.media_upload(filename)
