@@ -7,7 +7,7 @@ import config
 import os.path
 
 
-client = tweepy.Client(config.bearer_token, config.consumer_key,
+client = tweepy.Client(config.consumer_key,
                        config.consumer_secret, config.access_token,
                        config.access_token_secret)
 
@@ -89,7 +89,8 @@ class RedditFetcher:
 
         # Post tweet with image
 
-        api.update_status(status=tweet, media_ids=[media.media_id])
+        # api.update_status(status=tweet, media_ids=[media.media_id])
+        client.create_tweet(text=tweet, media_ids=[media.media_id])
 
         return
 
@@ -97,3 +98,8 @@ class RedditFetcher:
 r = RedditFetcher('dataisbeautiful', rtype="top", time_span="all", limit=500)
 # r.get_urls()
 r.tweet_data()
+
+
+# response = client.get_bookmarks(limit=10)
+
+# print(response)
